@@ -1,6 +1,7 @@
 {
-  "name": "جودة البلاد للتجارة",
+  "name": "شركة جودة البلاد للتسويق وتجارة الورقيات والبلاستيك",
   "short_name": "جودة البلاد",
+  "description": "منصة متخصصة في تسويق وتجارة الورقيات والبلاستيك مع إمكانية الطلب المباشر عبر واتساب",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f4f8f4",
@@ -8,8 +9,9 @@
   "icons": [
     {
       "src": "logo.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg"
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ]
 }
