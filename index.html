@@ -136,7 +136,6 @@
             padding: 25px;
             border-right: 6px solid var(--primary-light);
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-            text-align: right;
         }
 
         .hero h2 {
@@ -316,7 +315,7 @@
             height: 100%;
             background: rgba(0,0,0,0.5);
             z-index: 200;
-            justify-content: flex-start; /* تعديل لفتح السلة من الجهة اليمنى */
+            justify-content: flex-start;
         }
 
         .cart-content {
@@ -391,7 +390,7 @@
             <img src="logo.jpg" alt="شعار جودة البلاد" onerror="this.src='https://via.placeholder.com/60/ffffff/14661b?text=JB'">
             <div class="brand-text">
                 <h1>جودة البلاد</h1>
-                <p>للتسويق وتجارة الورقيات والبلاستيك[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span)</p>
+                <p>للتسويق وتجارة الورقيات والبلاستيك</p>
             </div>
         </div>
         <button class="cart-btn" onclick="toggleCart()">
@@ -401,27 +400,28 @@
 
     <div class="container">
         <div class="hero">
-            <h2>شركة جودة البلاد لتسويق وتجارة الورقيات والبلاستيك[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)</h2>
-            <p>JAWDAT AL-BILAD CO. for Marketing and Trading of Paper & Plastic Products[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span)</p>
-            <div class="slogan">جودة • ثقة • شراكة مستدامة | Quality • Trust • Sustainable Partnership[span_6](start_span)[span_6](end_span)</div>
+            <h2>شركة جودة البلاد لتسويق وتجارة الورقيات والبلاستيك</h2>
+            <p>متخصصون في توريد وتجارة المنتجات الورقية والبلاستيكية بأعلى معايير الجودة.</p>
+            <div class="slogan">جودة • ثقة • شراكة مستدامة</div>
         </div>
 
+        <!-- قسم إدارة ومبيعات الشركة -->
         <div class="team-section">
             <h3>إدارة ومبيعات الشركة</h3>
             <div class="team-grid">
                 <div class="team-card">
-                    <h4>MAGDI AL-DUAIS[span_7](start_span)[span_7](end_span)</h4>
-                    <div class="role">Sales Manager (مدير المبيعات)[span_8](start_span)[span_8](end_span)</div>
-                    <div class="team-contact">📞 0509449302[span_9](start_span)[span_9](end_span)</div>
-                    <div class="team-contact">✉️ Magdiduais1993@gmail.com[span_10](start_span)[span_10](end_span)</div>
-                    <div class="team-contact">📍 Dammam, Saudi Arabia[span_11](start_span)[span_11](end_span)</div>
+                    <h4>مجدي الدعيس (Magdi Al-Duais)</h4>
+                    <div class="role">مدير المبيعات (Sales Manager)</div>
+                    <div class="team-contact">📞 0509449302</div>
+                    <div class="team-contact">✉️ Magdiduais1993@gmail.com</div>
+                    <div class="team-contact">📍 الدمام، المملكة العربية السعودية</div>
                 </div>
                 <div class="team-card">
-                    <h4>AHAMMED RIYAS[span_12](start_span)[span_12](end_span)</h4>
-                    <div class="role">Sales Executive (مسؤول المبيعات)[span_13](start_span)[span_13](end_span)</div>
-                    <div class="team-contact">📞 0507876856[span_14](start_span)[span_14](end_span)</div>
-                    <div class="team-contact">✉️ Riyas05079@gmail.com[span_15](start_span)[span_15](end_span)</div>
-                    <div class="team-contact">📍 Dammam, Saudi Arabia[span_16](start_span)[span_16](end_span)</div>
+                    <h4>أحمد رياض (Ahammed Riyas)</h4>
+                    <div class="role">مسؤول المبيعات (Sales Executive)</div>
+                    <div class="team-contact">📞 0507876856</div>
+                    <div class="team-contact">✉️ Riyas05079@gmail.com</div>
+                    <div class="team-contact">📍 الدمام، المملكة العربية السعودية</div>
                 </div>
             </div>
         </div>
@@ -482,6 +482,10 @@
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             renderProducts(category);
+        }
+
+        function addToCard(id) {
+            // للتوافق
         }
 
         function addToCart(id) {
