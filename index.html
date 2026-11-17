@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#14661b">
+    <title>شركة جودة البلاد | للتسويق وتجارة الورقيات والبلاستيك</title>
+    
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        :root {
+            --primary-dark: #14661b;
+            --primary-light: #49b618;
+            --bg-light: #f4f8f4;
+            --text-dark: #1e293b;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding-bottom: 70px;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* العلامة المائية في الخلفية */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 450px;
+            background-image: url('logo.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* الشريط العلوي */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), #1e8226);
+            color: var(--white);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(20, 102, 27, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--white);
+            padding: 2px;
+            object-fit: contain;
+            border: 2px solid var(--primary-light);
+        }
+
+        .brand-text h1 {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+        }
+
+        .brand-text p {
+            font-size: 0.8rem;
+            color: #dcfce7;
+        }
+
+        .cart-btn {
+            background-color: var(--white);
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-light);
+            padding: 8px 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .cart-btn:hover {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        .badge {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 2px 7px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 20px auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            margin-bottom: 20px;
+            border-radius: 16px;
+            padding: 25px;
+            border-right: 6px solid var(--primary-light);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            text-align: right;
+        }
+
+        .hero h2 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .slogan {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+
+        /* قسم فريق العمل */
+        .team-section {
+            margin: 30px 0;
+        }
+
+        .team-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+            border-right: 4px solid var(--primary-dark);
+        }
+
+        .team-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .team-card .role {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .team-contact {
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* التصنيفات والمنتجات */
+        .categories {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #cbd5e1;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.2s;
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--primary-dark);
+            color: var(--white);
+            border-color: var(--primary-dark);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 14px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .product-tag {
+            background: #dcfce7;
+            color: var(--primary-dark);
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            align-self: flex-start;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .add-btn {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-light));
+            color: var(--white);
+            border: none;
+            padding: 11px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        .add-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* نافذة السلة الجانبية */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            justify-content: flex-start; /* تعديل لفتح السلة من الجهة اليمنى */
+        }
+
+        .cart-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ef4444;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            margin: 15px 0;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .qty-controls button {
+            background: #e2e8f0;
+            border: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .checkout-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <img src="logo.jpg" alt="شعار جودة البلاد" onerror="this.src='https://via.placeholder.com/60/ffffff/14661b?text=JB'">
+            <div class="brand-text">
+                <h1>جودة البلاد</h1>
+                <p>للتسويق وتجارة الورقيات والبلاستيك[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span)</p>
+            </div>
+        </div>
+        <button class="cart-btn" onclick="toggleCart()">
+            🛒 السلة <span class="badge" id="cart-count">0</span>
+        </button>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>شركة جودة البلاد لتسويق وتجارة الورقيات والبلاستيك[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)</h2>
+            <p>JAWDAT AL-BILAD CO. for Marketing and Trading of Paper & Plastic Products[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span)</p>
+            <div class="slogan">جودة • ثقة • شراكة مستدامة | Quality • Trust • Sustainable Partnership[span_6](start_span)[span_6](end_span)</div>
+        </div>
+
+        <div class="team-section">
+            <h3>إدارة ومبيعات الشركة</h3>
+            <div class="team-grid">
+                <div class="team-card">
+                    <h4>MAGDI AL-DUAIS[span_7](start_span)[span_7](end_span)</h4>
+                    <div class="role">Sales Manager (مدير المبيعات)[span_8](start_span)[span_8](end_span)</div>
+                    <div class="team-contact">📞 0509449302[span_9](start_span)[span_9](end_span)</div>
+                    <div class="team-contact">✉️ Magdiduais1993@gmail.com[span_10](start_span)[span_10](end_span)</div>
+                    <div class="team-contact">📍 Dammam, Saudi Arabia[span_11](start_span)[span_11](end_span)</div>
+                </div>
+                <div class="team-card">
+                    <h4>AHAMMED RIYAS[span_12](start_span)[span_12](end_span)</h4>
+                    <div class="role">Sales Executive (مسؤول المبيعات)[span_13](start_span)[span_13](end_span)</div>
+                    <div class="team-contact">📞 0507876856[span_14](start_span)[span_14](end_span)</div>
+                    <div class="team-contact">✉️ Riyas05079@gmail.com[span_15](start_span)[span_15](end_span)</div>
+                    <div class="team-contact">📍 Dammam, Saudi Arabia[span_16](start_span)[span_16](end_span)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterProducts('الكل', this)">جميع المنتجات</button>
+            <button class="cat-btn" onclick="filterProducts('ورقيات', this)">المنتجات الورقية</button>
+            <button class="cat-btn" onclick="filterProducts('بلاستيك', this)">المنتجات البلاستيكية</button>
+        </div>
+
+        <div class="products-grid" id="products-list"></div>
+    </div>
+
+    <!-- نافذة السلة -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>سلة المشتريات</h3>
+                <button class="close-btn" onclick="toggleCart()">✖</button>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+            <div>
+                <h3 style="margin-bottom: 10px;">الإجمالي: <span id="cart-total" style="color: var(--primary-dark);">0</span> ريال</h3>
+                <button class="checkout-btn" onclick="sendOrderWhatsApp()">إرسال الطلب عبر واتساب 💬</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "كرتون مناديل وجه فاخرة", category: "ورقيات", desc: "شدة 10 علب - 200 منديل مزدوج ناعم", price: 3500, image: "https://via.placeholder.com/250x170/f8fafc/14661b?text=مناديل+وجه" },
+            { id: 2, name: "أكواب ورقية للقهوة والشاي", category: "ورقيات", desc: "ربطة 50 كوب - مقاس 8 أونص عازل للحرارة", price: 1200, image: "https://via.placeholder.com/250x170/f8fafc/14661b?text=أكواب+ورقية" },
+            { id: 3, name: "أكياس سفرة بلاستيك رول", category: "بلاستيك", desc: "رول 50 مفرش سفرة عالي المتانة", price: 1500, image: "https://via.placeholder.com/250x170/f8fafc/14661b?text=مفارش+سفرة" },
+            { id: 4, name: "صحون بلاستيك مقسمة", category: "بلاستيك", desc: "ربطة 50 صحن أبيض متين للمناسبات", price: 2200, image: "https://via.placeholder.com/250x170/f8fafc/14661b?text=صحون+بلاستيك" },
+            { id: 5, name: "رول مناديل مطبخ جامبو", category: "ورقيات", desc: "امتصاص عالي - 2 رول كبير", price: 1800, image: "https://via.placeholder.com/250x170/f8fafc/14661b?text=رول+مطبخ" },
+            { id: 6, name: "علب حفظ الطعام البلاستيكية", category: "بلاستيك", desc: "طقم 25 علبة بغطاء محكم الإغلاق", price: 2800, image: "https://via.placeholder.com/250x170/f8fafc/14661b?text=علب+بلاستيك" }
+        ];
+
+        let cart = [];
+
+        function renderProducts(filter = 'الكل') {
+            const list = document.getElementById('products-list');
+            const filtered = filter === 'الكل' ? products : products.filter(p => p.category === filter);
+            
+            list.innerHTML = filtered.map(product => `
+                <div class="product-card">
+                    <span class="product-tag">${product.category}</span>
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p class="product-desc">${product.desc}</p>
+                    <div class="price">${product.price.toLocaleString()} ريال</div>
+                    <button class="add-btn" onclick="addToCart(${product.id})">+ أضف إلى السلة</button>
+                </div>
+            `).join('');
+        }
+
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderProducts(category);
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const count = cart.reduce((sum, i) => sum + i.qty, 0);
+            document.getElementById('cart-count').innerText = count;
+
+            const itemsContainer = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = '<p style="text-align:center; color:#94a3b8; margin-top:40px;">السلة فارغة حالياً</p>';
+            } else {
+                itemsContainer.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong>
+                            <div style="font-size:0.85rem; color:#14661b;">${(item.price * item.qty).toLocaleString()} ريال</div>
+                        </div>
+                        <div class="qty-controls">
+                            <button onclick="changeQty(${item.id}, -1)">-</button>
+                            <span style="margin: 0 8px; font-weight:bold;">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            document.getElementById('cart-total').innerText = total.toLocaleString();
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendOrderWhatsApp() {
+            if (cart.length === 0) {
+                alert("يرجى إضافة منتجات للسلة أولاً!");
+                return;
+            }
+            let message = "السلام عليكم شركة *جودة البلاد*، أرغب بطلب المنتجات التالية:\n\n";
+            cart.forEach(item => {
+                message += `▪ ${item.name} (الكمية: ${item.qty}) = ${(item.price * item.qty).toLocaleString()} ريال\n`;
+            });
+            const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+            message += `\n*الإجمالي الكلي:* ${total.toLocaleString()} ريال`;
+
+            const phone = "966509449302"; 
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        renderProducts();
+        updateCartUI();
+    </script>
+</body>
+</html>
